@@ -1,1 +1,475 @@
-# commercialWebsite1
+# Commercial_Website1# Ex02 Commercial Website
+## Date:02/11/26
+
+## AIM
+To create a commercial website using CSS Flexbox.
+
+## ALGORITHM
+### STEP 1
+Create an HTML file (index.html)
+
+### STEP 2
+Create a CSS file (style.css)
+
+### STEP 3
+Include a navigation bar with links to different sections.
+
+### STEP 4
+Add structured sections for Homepage, Products / Services, About Us, Contact Details and User Account.
+
+### STEP 5
+Include social media links at the footer with copyright information.
+
+### STEP 6
+Define global styles for fonts, colors, and layout.
+
+### STEP 7
+Style the header, navigation bar, and sections.
+
+### STEP 8
+Use Flexbox for layout design.
+
+### STEP 9
+Add hover effects and transitions for interactivity.
+
+### STEP 10
+Add Images and Media.
+
+### STEP 11
+Use optimized images for a professional look.
+
+### STEP 12
+Open the HTML file in a browser to check layout and functionality.
+
+### STEP 13
+Fix styling issues and refine content placement.
+
+### STEP 14
+Deploy the website.
+
+### STEP 15
+Upload to GitHub Pages for free hosting.
+
+## PROGRAM
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison Ora | Fashion & Lifestyle</title>
+    <style>
+        
+/* Basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #292824;
+    background: #F5F2EB;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Navigation bar */
+header {
+    background: #17212B;
+    padding: 20px 8%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo {
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #E5E7E9;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #B8A995;
+}
+
+/* Homepage */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 65px 10%;
+    background: #FFFFFF;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.eyebrow {
+    color: #817666;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    color: #17212B;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content > p:not(.eyebrow) {
+    max-width: 450px;
+    color: #55534E;
+    margin-bottom: 25px;
+}
+
+.hero-image {
+    width: 48%;
+    max-width: 520px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 11px 20px;
+    background: #17212B;
+    color: #FFFFFF;
+    border: 1px solid #17212B;
+    border-radius: 3px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.button:hover {
+    background: #B8A995;
+    color: #17212B;
+    border-color: #B8A995;
+}
+
+.button-outline {
+    background: transparent;
+    color: #17212B;
+}
+
+/* Common sections */
+.section {
+    padding: 65px 10%;
+}
+
+.section h2 {
+    color: #17212B;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.section > p:not(.eyebrow) {
+    color: #55534E;
+}
+
+/* Products using Flexbox */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.product-card {
+    flex: 1 1 220px;
+    min-width: 0;
+    padding-bottom: 18px;
+    background: #FFFFFF;
+    border: 1px solid #E5E0D6;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    color: #17212B;
+    font-size: 18px;
+    margin: 15px 15px 5px;
+}
+
+.product-card p {
+    color: #817666;
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+/* About section */
+.about-section {
+    background: #FFFFFF;
+}
+
+.about-section > p:not(.eyebrow) {
+    max-width: 650px;
+}
+
+/* Account section */
+.account-section {
+    background: #EAE5DB;
+}
+
+.account-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+/* Footer */
+footer {
+    padding: 25px 8%;
+    background: #17212B;
+    color: #E5E7E9;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-bottom: 12px;
+}
+
+.social-links a {
+    color: #B8A995;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #FFFFFF;
+}
+
+footer p {
+    font-size: 13px;
+}
+
+/* Responsive design */
+@media (max-width: 750px) {
+    .hero {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        padding: 45px 8%;
+    }
+
+    .hero-image {
+        width: 100%;
+        max-width: 100%;
+        height: 280px;
+    }
+
+    .section {
+        padding: 45px 8%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        gap: 12px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 18px 6%;
+    }
+
+    .nav-links {
+        gap: 10px 14px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .section h2 {
+        font-size: 27px;
+    }
+
+    .product-card {
+        flex-basis: 100%;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="#home" class="logo">MAISON ORA</a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#account">My Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Homepage -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">FASHION & LIFESTYLE</p>
+                <h1>Simple style.<br>Everyday comfort.</h1>
+                <p>
+                    Discover thoughtfully selected fashion and
+                    lifestyle essentials for your everyday life.
+                </p>
+                <a href="#products" class="button">Explore Collection</a>
+            </div>
+
+            <img
+                src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80"
+                alt="Fashion store interior"
+                class="hero-image"
+            >
+        </section>
+
+        <!-- Products -->
+        <section id="products" class="section">
+            <p class="eyebrow">OUR COLLECTION</p>
+            <h2>Featured Products</h2>
+
+            <div class="product-list">
+                <article class="product-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80"
+                        alt="Red casual sneakers"
+                        loading="lazy"
+                    >
+                    <h3>Casual Sneakers</h3>
+                    <p>₹1,499</p>
+                </article>
+
+                <article class="product-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=600&q=80"
+                        alt="Stylish handbag"
+                        loading="lazy"
+                    >
+                    <h3>Classic Handbag</h3>
+                    <p>₹1,999</p>
+                </article>
+
+                <article class="product-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80"
+                        alt="Basic cotton T-shirt"
+                        loading="lazy"
+                    >
+                    <h3>Cotton T-Shirt</h3>
+                    <p>₹799</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- About Us -->
+        <section id="about" class="section about-section">
+            <p class="eyebrow">ABOUT US</p>
+            <h2>Style for everyday living</h2>
+            <p>
+                Maison Ora is a fictional fashion and lifestyle brand
+                focused on simple designs, everyday comfort, and
+                timeless style.
+            </p>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section">
+            <p class="eyebrow">GET IN TOUCH</p>
+            <h2>Contact Us</h2>
+            <p>Email: support@maisonora.example</p>
+            <p>Phone: +91 98765 43210</p>
+        </section>
+
+        <!-- User Account -->
+        <section id="account" class="section account-section">
+            <p class="eyebrow">YOUR ACCOUNT</p>
+            <h2>Welcome to Maison Ora</h2>
+            <p>Manage your shopping experience.</p>
+            <div class="account-links">
+                <a href="#account" class="button">Login</a>
+                <a href="#account" class="button button-outline">Register</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.instagram.com/">Instagram</a>
+            <a href="https://www.facebook.com/">Facebook</a>
+            <a href="https://www.linkedin.com/">LinkedIn</a>
+        </div>
+        <p>© 2026 Maison Ora. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+```
+
+## OUTPUT
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+## RESULT
+The program for creating commercial website using CSS Flexbox is executed successfully.
